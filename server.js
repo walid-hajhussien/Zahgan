@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }))
-mongoose.connect('mongodb://zaid-1994:zaid-1994@ds119394.mlab.com:19394/zahgan')
+mongoose.connect('mongodb://GG:gg835864@ds115664.mlab.com:15664/diary-db')
 
 mongoose.Promise = global.Promise;
 
