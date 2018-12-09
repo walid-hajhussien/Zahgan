@@ -15,7 +15,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }))
+<<<<<<< HEAD
 mongoose.connect('mongodb://BCT:gg835864@ds127842.mlab.com:27842/blackcodeteam')
+=======
+mongoose.connect('mongodb://GG:gg835864@ds115664.mlab.com:15664/diary-db')
+>>>>>>> ec555da85f03fd20bf9c9ab38fe54b7a9debd9c4
 
 mongoose.Promise = global.Promise;
 
