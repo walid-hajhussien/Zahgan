@@ -20,7 +20,7 @@ class Myprofile extends React.Component {
     }
 
     render() {
-        
+        console.log(localStorage.email)
         return (
             <div >
                 <div className="maindiv" onClick={this.handleclick}>

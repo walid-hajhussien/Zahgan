@@ -31,7 +31,7 @@ class Create extends React.Component {
       sets: '',
       date: '',
       location: '',
-      items: [],
+      items: []
     };
 
 
