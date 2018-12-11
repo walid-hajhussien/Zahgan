@@ -64,25 +64,31 @@ class App extends Component {
       
       <Nav />
       
+      
       <Switch>
-  <Route path='/HomeClass' render={()=>{
+  <Route exact path='/' render={()=>{
     return (
       
       <HomeClass items={this.state.items} />
     )}}
   />
-
+  <Route  path='/homeClass' render={()=>{
+    return (
+      
+      <HomeClass items={this.state.items} />
+    )}}
+  />
 <Route path='/SignInCreator' component={SignInCreator} />
 <Route path='/Creator' component={Create} />
 <Route path='/signup' component={Signup} />
 <Route path='/signin' component={Signin} />
 <Route path='/location' component={location}/>
 <Route path='/vision' component={vision}/>
-
 <Route path='/Eventcreatshow' component={Eventcreatshow}/>
 <Route path='/Eventsets' component={Eventsets}/>
 <Route path='/Reserved' component={Reserved}/>
 </Switch>
+
 </div>
 
 </div>

@@ -34,6 +34,14 @@ db.once('open', function () {
 
 //var data=[{Name:'"https://wallpaperbrowse.com5/media/images/pexels-photo-248797.jpeg"' ,HomeWork:'y7ya'}]
 
+//test 
+app.get('/test', function (req, res) {
+    console.log(req.token)
+    console.log(req)
+});
+
+
+
 // get a list for all events from the db
 app.get('/create', function (req, res, next) {
   Event.find({}).then(function (events) {
