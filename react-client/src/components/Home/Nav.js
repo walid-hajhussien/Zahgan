@@ -112,7 +112,7 @@ class Nav extends React.Component {
 	render() {
 		return (
 			<div>
-				<p>
+				
 				<nav className="navbar navbar-expand-sm ">
 					<ul className="navbar-nav">
 						<li className="active"><a href="/homeClass">Home</a></li>
@@ -128,7 +128,7 @@ class Nav extends React.Component {
 						<li style={{ 'display': this.state.isLoggedIn === true ? 'block' : 'none' }}><a href="javascript:void(0);">Welcome {this.jsUcfirst(this.state.userName)}</a></li>
 					</ul>
 				</nav>
-				</p>
+				
 			</div>
 
 		)
