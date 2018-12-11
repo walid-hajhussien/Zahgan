@@ -79,7 +79,8 @@ class Create extends React.Component {
       availableSeats: this.state.sets,
       date: this.state.date,
       eventLocation: [this.state.location],
-      attending: []
+      attending: [],
+      approve: 1
     }
 
   // pst requst using ajax 

@@ -19,7 +19,7 @@ import './profile.css'
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 export default class FormDialog extends React.Component {
 
-      
+
     static defaultProps = {
         center: {
             lat: 31.95522,
@@ -39,7 +39,7 @@ export default class FormDialog extends React.Component {
         date: '',
         location: '',
         items: [],
-        map:''
+        map: ''
     };
 
     handleClickOpen = () => {
@@ -49,7 +49,7 @@ export default class FormDialog extends React.Component {
 
     handleClose = () => {
         this.props.handleclick()
-        var obj={
+        var obj = {
             creatorName: this.state.host,
             eventName: this.state.event,
             cost: this.state.cost,
@@ -59,7 +59,7 @@ export default class FormDialog extends React.Component {
             date: this.state.date,
             eventLocation: this.state.location,
             attending: [],
-            approve:0
+            approve: 0
         }
 
         console.log(obj)
@@ -67,12 +67,12 @@ export default class FormDialog extends React.Component {
             type: "POST",
             url: '/create',
             data: {
-              obj
+                obj
             },
             success: function (data) {
-              console.log("ajax data", data)
+                console.log("ajax data", data)
             }
-          });
+        });
 
     };
 
@@ -95,11 +95,11 @@ export default class FormDialog extends React.Component {
         console.log(this.state)
         this.setState({
             location: { latitude, longtitude },
-            map:latitude+'/'+longtitude
+            map: latitude + '/' + longtitude
         })
 
 
-       
+
     }
 
     render() {
@@ -112,17 +112,25 @@ export default class FormDialog extends React.Component {
                     aria-labelledby="form-dialog-title"
                 >
                     <DialogTitle id="form-dialog-title">Create event</DialogTitle>
-                    <DialogContent>
+                    <DialogContent >
                         <DialogContentText style={{ 'width': '2000px' }}> </DialogContentText>
-                        <TextField  onChange={(e)=>{this.setState({host: e.target.value })}}
+                        <TextField onChange={(e) => { this.setState({ host: e.target.value }) }}
                             autoFocus
                             margin="dense"
                             id="name"
                             label="User Name..."
                             type="text"
+                            required
+                            InputProps={{
+                                style: {
+                                    fontSize:20,
+                                },
+                            }}
                             fullWidth
+                            variant="standard"
+
                         />
-                        <TextField onChange={(e)=>{this.setState({event: e.target.value })}}
+                        <TextField onChange={(e) => { this.setState({ event: e.target.value }) }}
                             autoFocus
                             margin="dense"
                             id="name"
@@ -130,7 +138,7 @@ export default class FormDialog extends React.Component {
                             type="text"
                             fullWidth
                         />
-                        <TextField onChange={(e)=>{this.setState({cost: e.target.value })}}
+                        <TextField onChange={(e) => { this.setState({ cost: e.target.value }) }}
                             autoFocus
                             margin="dense"
                             id="name"
@@ -138,7 +146,7 @@ export default class FormDialog extends React.Component {
                             type="number"
                             fullWidth
                         />
-                        <TextField onChange={(e)=>{this.setState({photo: e.target.value })}}
+                        <TextField onChange={(e) => { this.setState({ photo: e.target.value }) }}
                             autoFocus
                             margin="dense"
                             id="name"
@@ -146,7 +154,7 @@ export default class FormDialog extends React.Component {
                             type="text"
                             fullWidth
                         />
-                        <TextField onChange={(e)=>{this.setState({sets: e.target.value })}}
+                        <TextField onChange={(e) => { this.setState({ sets: e.target.value }) }}
                             autoFocus
                             margin="dense"
                             id="name"
@@ -154,7 +162,7 @@ export default class FormDialog extends React.Component {
                             type="number"
                             fullWidth
                         />
-                        <TextField onChange={(e)=>{this.setState({date: e.target.value })}}
+                        <TextField onChange={(e) => { this.setState({ date: e.target.value }) }}
                             autoFocus
                             margin="dense"
                             id="name"
@@ -170,7 +178,7 @@ export default class FormDialog extends React.Component {
                             type="text"
                             fullWidth
                         />
-                        <TextField onChange={(e)=>{this.setState({description: e.target.value })}}
+                        <TextField onChange={(e) => { this.setState({ description: e.target.value }) }}
                             autoFocus
                             margin="dense"
                             id="name"

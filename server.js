@@ -45,7 +45,7 @@ app.get('/test', function (req, res) {
 
 // get a list for all events from the db
 app.get('/create', function (req, res, next) {
-  Event.find({}).then(function (events) {
+  Event.find({approve:1}).then(function (events) {
     ;
     res.send(events)
   }).catch(next)
