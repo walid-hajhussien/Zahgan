@@ -1,23 +1,52 @@
 import React ,{ Component} from 'react'
+import $ from 'jquery';
+
 
 class ContactUs extends React.Component {
+
 
   state = {
     name : null,
     email : null,
     feedback : null
-}
+  };
+
 handleChange = (event)=>{
-  console.log("hi",event.target.value)
-  this.setState({
+    this.setState({
       [event.target.id]:event.target.value
 
   })
 }
+
 handleSubmit = (event)=>{
-   event.preventDefault()
-   console.log(this.state)
-}
+
+   var obj = {
+    userName: this.state.name,
+    email: this.state.email,
+    feedback: this.state.feedback
+  }
+
+// post requst using ajax 
+$.ajax({
+  type: "POST",
+  url: '/contactus',
+  data: {
+      obj
+  },
+  success: function (data) {
+      console.log("ajax data", data)
+  },
+  error: (err) => {
+
+        console.log('err', err);
+      }
+  
+});
+
+event.preventDefault() 
+
+}; 
+
    render(){
        return(
           <div className='container' >
@@ -47,7 +76,7 @@ handleSubmit = (event)=>{
                 <div className="form-group row">
                   <label className="col-sm-2 col-form-label">FeedBack: </label>
                   <div className="col-sm-10">
-                    <input id='feedback' className="form-control" placeholder="FeedBack" onChange = {this.handleChange} />
+                    <input style={{height:100}} id='feedback' className="form-control" placeholder="FeedBack" onChange = {this.handleChange} />
                   </div>
                 </div>
               </div>
@@ -68,4 +97,5 @@ handleSubmit = (event)=>{
 
    }
 }
+
 export default ContactUs
