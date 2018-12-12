@@ -53,6 +53,7 @@ class Nav extends React.Component {
 		});
 	}
 
+
 	ToAbout = () => {
 		$("#clickAbout").click(function () {
 			$('html, body').animate({
@@ -60,6 +61,7 @@ class Nav extends React.Component {
 			}, 2000);
 		});
 	}
+
 
 	showLoggedInElements = () => {
 		if (this.state.isLoggedIn === true) {
@@ -109,6 +111,7 @@ class Nav extends React.Component {
 
 
 
+
 	render() {
 		return (
 			<div>
@@ -117,7 +120,7 @@ class Nav extends React.Component {
 					<ul className="navbar-nav">
 						<li className="active"><a href="/homeClass">Home</a></li>
 						<li><a href="javascript:void(0);" onClick={this.ToAbout} id="clickAbout">About</a></li>
-						<li><a href="#" data-toggle="modal" data-target="#myModal">Contact us</a></li>
+						<li><a href="./ContactUs"  id="clickContactUs" >Contact us</a></li>
 						<img src={zahgan}></img>
 						<li style={{ 'display': this.state.isLoggedIn === false ? 'block' : 'none' }}><a href="/SignInCreator">Manager</a></li>
 						<li><a href="javascript:void(0);" onClick={this.ToEvents} id="clickEvent">Events</a></li>
@@ -133,5 +136,6 @@ class Nav extends React.Component {
 
 		)
 	}
+
 }
 export default Nav

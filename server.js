@@ -52,6 +52,12 @@ app.get('/create', function (req, res, next) {
 });
 
 
+// feedback 
+app.post('/contactus', function (req, res, next) {
+console.log(9999)
+ 
+});
+
 //add new event to the db
 app.post('/create', function (req, res, next) {
 console.log(req.body)
