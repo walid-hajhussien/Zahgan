@@ -114,6 +114,7 @@ export default class FormDialog extends React.Component {
                     <DialogTitle id="form-dialog-title">Create event</DialogTitle>
                     <DialogContent >
                         <DialogContentText style={{ 'width': '2000px' }}> </DialogContentText>
+                        
                         <TextField onChange={(e) => { this.setState({ host: e.target.value }) }}
                             autoFocus
                             margin="dense"
