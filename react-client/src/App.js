@@ -35,6 +35,7 @@ class App extends Component {
       url: '/create',
       type: "GET",
       success: (data) => {
+        console.log(data)
        
         this.setState({
           items: data

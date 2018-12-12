@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../image/create.jpg';
 import './profile.css'
 import FormDialog from './createEvent'
+import FormView from './viewEvents'
 
 
 
@@ -11,12 +12,20 @@ class Myprofile extends React.Component {
 
     state = {
         open: false,
+        open2:false
         
     }
     handleclick = (e) => {
-        console.log(999999999)
+        
         this.setState({ open: !this.state.open });
+        
+    }
+
+    handleclick2 = (e) => {
+        console.log(999999999)
+        this.setState({ open2: !this.state.open2 });
         console.log(this.state)
+        
     }
 
     render() {
@@ -33,7 +42,7 @@ class Myprofile extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="maindiv">
+                <div className="maindiv"  onClick={this.handleclick2}>
                     <div className="container-fluid ">
                         <div className="card cardprofile">
                             <div className="card-body">
@@ -45,6 +54,7 @@ class Myprofile extends React.Component {
                 </div>
 
              <FormDialog className="formdialog" open={this.state.open} handleclick={this.handleclick}/>
+             <FormView  open={this.state.open2}  handleclick2={this.handleclick2}/>
             </div>
         )
     }
