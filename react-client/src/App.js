@@ -16,6 +16,8 @@ import Footer from './components/Footer';
 import location from './components/about/pages/location';
 import vision from './components/about/pages/vision';
 import Myprofile from './components/myprofile/myprofile';
+import ContactUs from './components/ContactUs/ContactUs';
+
 
 class App extends Component {
 
@@ -90,6 +92,8 @@ class App extends Component {
 <Route path='/Eventcreatshow' component={Eventcreatshow}/>
 <Route path='/Eventsets' component={Eventsets}/>
 <Route path='/Reserved' component={Reserved}/>
+<Route path='/ContactUs' component={ContactUs}/>
+
 
 </Switch>
 
