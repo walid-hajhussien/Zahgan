@@ -67,20 +67,20 @@ class Myprofile extends React.Component {
                 <section className="sectionmyprofile">
                 <div className="maindiv" onClick={this.handleclick}>
                     <div className="container-fluid " >
-                        <div className="card cardprofile g1">
-                            <div className="card-body">
+                        <div className="card cardprofile g1 animated flip  delay-0.5s">
+                            <div className="card-body animated rubberBand delay-3s">
                                 <img className="card-img-top imgprofile" src={logo} alt="Card image cap"></img>
-                                <span className="spanprofile">Press to create an Event.......</span>
+                                <span className="spanprofile  " > Create an Event</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="maindiv"  onClick={this.handleclick2}>
                     <div className="container-fluid ">
-                        <div className="card cardprofile g1">
-                            <div className="card-body " >
+                        <div className="card cardprofile g1 animated flip delay-1s">
+                            <div className="card-body animated rubberBand delay-3s " >
                                 <img className="card-img-top imgprofile" src={logo2} alt="Card image cap"></img>
-                                <span className="spanprofile">My Event.......</span>
+                                <span className="spanprofile">My Event</span>
                             </div>
                         </div>
                     </div>

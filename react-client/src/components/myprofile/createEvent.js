@@ -10,7 +10,7 @@ import GoogleMapReact from 'google-map-react';
 import $ from 'jquery';
 import './profile.css'
 import logo from '../../image/event.jpg'
-
+import swal from 'sweetalert2';
 
 
 
@@ -50,9 +50,9 @@ export default class FormDialog extends React.Component {
 
     handleClose = () => {
         this.props.handleclick()
-        console.log(9999999)
+        
         var obj = {
-            creatorName: this.state.host,
+            creatorName: localStorage.getItem('user'),
             eventName: this.state.event,
             cost: this.state.cost,
             des: this.state.description,
@@ -72,7 +72,10 @@ export default class FormDialog extends React.Component {
                 obj
             },
             success: function (data) {
+                swal("Thanks You", "Your Post has been sent to the manager for approve", "success")
                 console.log("ajax data", data)
+                
+
             }
         });
 

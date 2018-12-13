@@ -90,7 +90,8 @@ function CustomizedTable(props) {
                                 <CustomTableCell style={{  textAlign:"center"}} >{row.cost}</CustomTableCell>
                                 <CustomTableCell style={{  textAlign:"center"}} numeric>{row.availableSeats}</CustomTableCell>
                                 <CustomTableCell style={{  textAlign:"center"}} numeric>{row.date}</CustomTableCell>
-                                <CustomTableCell numeric style={{  textAlign:"center",color: (row.approve==1) ? 'green':'red' }}>{(row.approve==1)?'approved':'Not Approve'}</CustomTableCell>
+                                {/* <CustomTableCell numeric style={{  textAlign:"center",color: (row.approve==1) ? 'green':'red' }}>{(row.approve==1)?'approved':'Not Approve'}</CustomTableCell> */}
+                                <CustomTableCell numeric style={{  textAlign:"center",color: (row.approve==1) ? 'green':(row.approve==0) ? 'blue':'red' }}>{(row.approve==1)?'approved':(row.approve==0) ? 'Pending':'rejected'}</CustomTableCell>
                             </TableRow>
                         );
                     })}

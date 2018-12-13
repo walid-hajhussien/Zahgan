@@ -11,9 +11,15 @@
     margin-left: 150px;
 }
 
+
+
+
 .spanprofile{
-   margin-left: 2px;
-   font-size: 20px;
+   margin-left: 35px;
+   font-size: 30px;
+   font-weight: bold;
+   
+   
 }
 
 .maindiv{
@@ -25,10 +31,13 @@
 .g1{
     border-radius: 20px;
     opacity:0.8;
+    transition:color 2s
+   
 }
 .g1:hover{
     
     opacity:1;
+    color:green
 }
 
 .f1{
