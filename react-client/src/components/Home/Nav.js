@@ -116,7 +116,7 @@ class Nav extends React.Component {
 		return (
 			<div>
 				
-				<nav className="navbar navbar-expand-sm ">
+				<nav className="navbar navbar-expand-sm " style={{opacity:'0.9',borderRadius:'0px'}}>
 					<ul className="navbar-nav">
 						<li className="active"><a href="/homeClass">Home</a></li>
 						<li><a href="javascript:void(0);" onClick={this.ToAbout} id="clickAbout">About</a></li>

@@ -49,6 +49,7 @@ const rows = [
 ];
 
 function CustomizedTable(props) {
+    console.log('props2',props.data)
     var a = {
         approve: 1,
         attending: [],
@@ -62,38 +63,42 @@ function CustomizedTable(props) {
         url: "https://images.yourstory.com/2015/07/yourstory-party-hunterz-store.jpg"
     }
 
+    var result=props.data
+
     const { classes } = props;
 
     return (
-
+            <div>
         <Paper className={classes.root}>
             <Table className={classes.table}>
                 <TableHead>
                     <TableRow >
-                        <CustomTableCell style={{ fontSize: '15px' }}>Event Name</CustomTableCell>
-                        <CustomTableCell style={{ fontSize: '15px' }} numeric>Event Cost</CustomTableCell>
-                        <CustomTableCell style={{ fontSize: '15px' }} numeric>Number of seats</CustomTableCell>
-                        <CustomTableCell style={{ fontSize: '15px' }} >Event Date</CustomTableCell>
-                        <CustomTableCell style={{ fontSize: '15px' }} numeric>Manager Approval</CustomTableCell>
+                        <CustomTableCell style={{ fontSize: '15px' , textAlign:"center"}}>Event Name</CustomTableCell>
+                        <CustomTableCell style={{ fontSize: '15px' , textAlign:"center"}} numeric>Event Cost</CustomTableCell>
+                        <CustomTableCell style={{ fontSize: '15px' , textAlign:"center"}} numeric>Number of seats</CustomTableCell>
+                        <CustomTableCell style={{ fontSize: '15px' , textAlign:"center"}} >Event Date</CustomTableCell>
+                        <CustomTableCell style={{ fontSize: '15px' , textAlign:"center"}} numeric>Manager Approval</CustomTableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows.map(row => {
+                    {result.map(row => {
                         return (
                             <TableRow className={classes.row} key={row.id}>
-                                <CustomTableCell component="th" scope="row">
-                                    {row.name}
+                                <CustomTableCell style={{  textAlign:"center"}} component="th" scope="row">
+                                    {row.eventName}
                                 </CustomTableCell>
-                                <CustomTableCell >{a.creatorName}</CustomTableCell>
-                                <CustomTableCell numeric>{row.fat}</CustomTableCell>
-                                <CustomTableCell numeric>{row.carbs}</CustomTableCell>
-                                <CustomTableCell numeric>{row.protein}</CustomTableCell>
+                                <CustomTableCell style={{  textAlign:"center"}} >{row.cost}</CustomTableCell>
+                                <CustomTableCell style={{  textAlign:"center"}} numeric>{row.availableSeats}</CustomTableCell>
+                                <CustomTableCell style={{  textAlign:"center"}} numeric>{row.date}</CustomTableCell>
+                                <CustomTableCell numeric style={{  textAlign:"center",color: (row.approve==1) ? 'green':'red' }}>{(row.approve==1)?'approved':'Not Approve'}</CustomTableCell>
                             </TableRow>
                         );
                     })}
                 </TableBody>
-            </Table>
+            </Table>     
         </Paper>
+        <p style={{textAlign:"center",fontSize:'10px',color:'red',paddingTop:'20px'}}>Press ESC to Exit</p>
+        </div>
     );
 }
 

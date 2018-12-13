@@ -38,6 +38,7 @@ class Signin extends React.Component {
           if (res.success){
               localStorage.setItem('token', res.token);
               localStorage.setItem('email', obj.email)
+              localStorage.setItem('user', 'ozil')
 
             this.setState({
                 isLoggedIn: true

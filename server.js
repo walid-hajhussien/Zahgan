@@ -43,7 +43,7 @@ app.get('/test', function (req, res) {
 
 
 
-// get a list for all events from the db
+// get a list for all events from the db which approval
 app.get('/create', function (req, res, next) {
   Event.find({approve:1}).then(function (events) {
     ;
@@ -51,6 +51,18 @@ app.get('/create', function (req, res, next) {
   }).catch(next)
 });
 
+// get a list for all events from the db for specific user
+app.post('/create2', function (req, res, next) {
+console.log(req.body.obj.user)
+var user =req.body.obj.user
+Event.find({creatorName:user}).then(function (events) {
+  ;
+  res.send(events)
+}).catch(next)
+
+
+
+});
 
 // feedback 
 app.post('/contactus', function (req, res, next) {

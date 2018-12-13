@@ -26,6 +26,7 @@ class App extends Component {
     this.state = {
 
       items: [],
+      items2:[],
       authorized: false
 
     }
@@ -48,6 +49,12 @@ class App extends Component {
         console.log('err', err);
       }
     });
+
+  
+   
+
+
+
   }
 
 

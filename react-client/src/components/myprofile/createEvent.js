@@ -9,6 +9,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import GoogleMapReact from 'google-map-react';
 import $ from 'jquery';
 import './profile.css'
+import logo from '../../image/event.jpg'
 
 
 
@@ -49,6 +50,7 @@ export default class FormDialog extends React.Component {
 
     handleClose = () => {
         this.props.handleclick()
+        console.log(9999999)
         var obj = {
             creatorName: this.state.host,
             eventName: this.state.event,
@@ -104,40 +106,55 @@ export default class FormDialog extends React.Component {
 
     render() {
         return (
-            <div>
+            <div > 
 
-                <Dialog
+                <Dialog 
+                fullScreen
+                className="animated fadeIn delay-0.5s"
+                
+                    
                     open={this.state.open}
-                    onClose={this.handleClose}
+                    onClose={this.handleClickOpen}
                     aria-labelledby="form-dialog-title"
                 >
-                    <DialogTitle id="form-dialog-title">Create event</DialogTitle>
-                    <DialogContent >
-                        <DialogContentText style={{ 'width': '2000px' }}> </DialogContentText>
+                    {/* <DialogTitle id="form-dialog-title">Create event</DialogTitle> */}
+                    <img className="imgevent animated flipInY delay-1s" src={logo} style={{width:'100px',marginLeft:'750px',marginTop:'10px'}}/>
+
+                    <DialogContent  className="d1 pulse animated delay-1s">
+                        <DialogContentText > </DialogContentText>
                         
-                        <TextField onChange={(e) => { this.setState({ host: e.target.value }) }}
+                        <TextField style={{ fontSize: '30px' }} onChange={(e) => { this.setState({ host: e.target.value }) }}
                             autoFocus
                             margin="dense"
                             id="name"
-                            label="User Name..."
+                            label={"User Name..."}
                             type="text"
-                            required
+                          
+                            
+                           
                             InputProps={{
                                 style: {
-                                    fontSize:20,
-                                },
+                                    fontSize:16  
+                                }
                             }}
                             fullWidth
-                            variant="standard"
+                            variant="outlined"
+                            
 
                         />
-                        <TextField onChange={(e) => { this.setState({ event: e.target.value }) }}
+                        <TextField floatingLabelFocusStyle={{color: 'red' }}  onChange={(e) => { this.setState({ event: e.target.value }) }}
                             autoFocus
                             margin="dense"
                             id="name"
                             label="Event Name..."
                             type="text"
                             fullWidth
+                            variant="outlined"
+                            InputProps={{
+                                style: {
+                                    fontSize:16  
+                                }
+                            }}
                         />
                         <TextField onChange={(e) => { this.setState({ cost: e.target.value }) }}
                             autoFocus
@@ -146,6 +163,12 @@ export default class FormDialog extends React.Component {
                             label="Event Cost..."
                             type="number"
                             fullWidth
+                            variant="outlined"
+                            InputProps={{
+                                style: {
+                                    fontSize:16  
+                                }
+                            }}
                         />
                         <TextField onChange={(e) => { this.setState({ photo: e.target.value }) }}
                             autoFocus
@@ -154,6 +177,12 @@ export default class FormDialog extends React.Component {
                             label="url photo..."
                             type="text"
                             fullWidth
+                            variant="outlined"
+                            InputProps={{
+                                style: {
+                                    fontSize:16  
+                                }
+                            }}
                         />
                         <TextField onChange={(e) => { this.setState({ sets: e.target.value }) }}
                             autoFocus
@@ -162,14 +191,26 @@ export default class FormDialog extends React.Component {
                             label="Number of seats.."
                             type="number"
                             fullWidth
+                            variant="outlined"
+                            InputProps={{
+                                style: {
+                                    fontSize:16  
+                                }
+                            }}
                         />
                         <TextField onChange={(e) => { this.setState({ date: e.target.value }) }}
                             autoFocus
                             margin="dense"
                             id="name"
-                            label="Date and time.."
+                            
                             type="datetime-local"
                             fullWidth
+                            variant="outlined"
+                            InputProps={{
+                                style: {
+                                    fontSize:13 
+                                }
+                            }}
                         />
                         <TextField value={this.state.map}
                             autoFocus
@@ -178,6 +219,12 @@ export default class FormDialog extends React.Component {
                             label="Event location.."
                             type="text"
                             fullWidth
+                            variant="outlined"
+                            InputProps={{
+                                style: {
+                                    fontSize:16  
+                                }
+                            }}
                         />
                         <TextField onChange={(e) => { this.setState({ description: e.target.value }) }}
                             autoFocus
@@ -186,9 +233,15 @@ export default class FormDialog extends React.Component {
                             label="Event description.."
                             type="text"
                             fullWidth
+                            variant="outlined"
+                            InputProps={{
+                                style: {
+                                    fontSize:16  
+                                }
+                            }}
                         />
 
-                        <div className="col-sm-2"><button type="button" className="btn btn-dark" data-toggle="modal" data-target="#myModal">Map</button></div>
+                        <button type="button" className="btn btn-dark b1" data-toggle="modal" data-target="#myModal">Map</button>
 
                         <div className="modal fade" id="myModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -219,7 +272,7 @@ export default class FormDialog extends React.Component {
 
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={this.handleClose} color="primary" >
+                        <Button onClick={this.handleClickOpen} color="primary" >
                             Cancel
             </Button>
                         <Button onClick={this.handleClose} color="primary">

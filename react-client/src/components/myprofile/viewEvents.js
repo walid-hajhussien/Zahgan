@@ -37,39 +37,36 @@ export default class FormView extends React.Component {
 }
 
   render() {
-    
+    console.log('props1',this.props.data)
     return (
-      <div>
+      <div >
      
     
-        <Dialog
+        <Dialog 
+        fullScreen
+        className="animated fadeIn delay-0.7s"
           open={this.state.open}
           onClose={this.handleClose}
           aria-labelledby="form-dialog-title"
+          
+          
+          
         >
-          <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
-          <DialogContent>
-            <DialogContentText>
-              To subscribe to this website, please enter your email address here. We will send
-              updates occasionally.
+          <DialogTitle   id="form-dialog-title"></DialogTitle>
+          <DialogContent >
+            <DialogContentText
+            
+            >
+            
             </DialogContentText>
-            <TextField
-              autoFocus
-              margin="dense"
-              id="name"
-              label="Email Address"
-              type="email"
-              fullWidth
-            />
-            <WithStyles test="walid"/>
+    
+            <WithStyles data={this.props.data}/>
           </DialogContent>
           <DialogActions>
             <Button onClick={this.handleClose} color="primary">
-              Cancel
+              Close
             </Button>
-            <Button onClick={this.handleClose} color="primary">
-              Subscribe
-            </Button>
+          
           </DialogActions>
         </Dialog>
       </div>
